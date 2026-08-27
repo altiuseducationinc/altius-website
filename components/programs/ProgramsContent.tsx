@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ProgramsHero from '@/components/programs/ProgramsHero';
 import FutureReadyContent from '@/components/programs/FutureReadyContent';
 import ProgramsSidebar from '@/components/programs/ProgramsSidebar';
@@ -97,10 +98,20 @@ const programsData = [
   },
 ];
 
-export default function ProgramsContent({ initialTab }: { initialTab: string }) {
+export default function ProgramsContent({ initialTab }: { initialTab?: string }) {
+  const searchParams = useSearchParams();
+  const tabFromQuery = searchParams.get('tab') || initialTab || '';
+
   const [activeTab, setActiveTab] = useState(
-    () => TAB_MAP[initialTab] ?? 'tutoring'
+    () => TAB_MAP[tabFromQuery] ?? 'tutoring'
   );
+
+  useEffect(() => {
+    if (tabFromQuery && TAB_MAP[tabFromQuery]) {
+      setActiveTab(TAB_MAP[tabFromQuery]);
+    }
+  }, [tabFromQuery]);
+
 
   const currentProgram = programsData.find((p) => p.id === activeTab) || programsData[0];
 

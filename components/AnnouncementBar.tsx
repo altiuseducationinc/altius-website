@@ -12,11 +12,11 @@ export default function AnnouncementBar() {
             </span>
             <span>•</span>
             <span className="flex items-center gap-2">
-              📍 Surat, Gujarat, India
+              📍 Brampton, Ontario, Canada
             </span>
             <span>•</span>
             <span className="flex items-center gap-2">
-              📞 +91 XXXXX XXXXX
+              📞 +1 (905) 781-5450
             </span>
             <span>•</span>
             <span className="flex items-center gap-2 text-altiusNavy bg-altiusGold px-3 py-0.5 rounded-full">

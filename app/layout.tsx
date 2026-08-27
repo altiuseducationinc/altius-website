@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -31,6 +32,11 @@ export const metadata: Metadata = {
     "TCF TEF",
     "education",
   ],
+  icons: {
+    icon: "/logo/2.jpeg",
+    shortcut: "/logo/2.jpeg",
+    apple: "/logo/2.jpeg",
+  },
 };
 
 export default function RootLayout({
@@ -43,6 +49,7 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${montserrat.variable} font-sans bg-altiusLight text-altiusNavy antialiased`}>
         <AnnouncementBar />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

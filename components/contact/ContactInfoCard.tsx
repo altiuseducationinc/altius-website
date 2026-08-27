@@ -21,7 +21,10 @@ export default function ContactInfoCard() {
           </div>
           <div>
             <h4 className="font-bold text-sm text-altiusNavy">Altius Education Centre</h4>
-            <p className="text-gray-600 text-xs mt-0.5 leading-relaxed">Surat, Gujarat, India</p>
+            <p className="text-gray-600 text-xs mt-0.5 leading-relaxed">
+              6 Dewside Dr, Unit 18<br />
+              Brampton, Ontario, L6R 3Y3, Canada
+            </p>
           </div>
         </div>
 
@@ -44,8 +47,11 @@ export default function ContactInfoCard() {
             </svg>
           </div>
           <div>
-            <h4 className="font-bold text-sm text-altiusNavy">Call Us</h4>
-            <p className="text-gray-600 text-xs mt-0.5">+91 XXXXX XXXXX<br />Mon–Sat, 9 AM – 8 PM</p>
+            <h4 className="font-bold text-sm text-altiusNavy">Call / WhatsApp</h4>
+            <p className="text-gray-600 text-xs mt-0.5">
+              <a href="tel:+19057815450" className="hover:text-altiusBlue transition">+1 (905) 781-5450</a><br />
+              Mon–Sat, 9 AM – 8 PM EST
+            </p>
           </div>
         </div>
 
