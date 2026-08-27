@@ -107,13 +107,6 @@ export default function ProgramsContent({ initialTab }: { initialTab: string }) 
   return (
     <div>
       <ProgramsHero />
-
-      <section className="py-16 px-6 bg-altiusLight text-altiusNavy">
-        <div className="max-w-7xl mx-auto">
-          <FutureReadyContent />
-        </div>
-      </section>
-
       <section id="specialty-programs" className="py-16 px-6 bg-altiusLight text-altiusNavy border-t border-gray-200/70 scroll-mt-28">
         <div className="max-w-7xl mx-auto space-y-10">
 
@@ -137,7 +130,7 @@ export default function ProgramsContent({ initialTab }: { initialTab: string }) 
             />
 
             <div className="lg:col-span-8 space-y-6">
-              <div className="bg-white p-8 sm:p-10 border border-gray-200 shadow-sm space-y-6" style={{ borderRadius: '8px' }}>
+              <div className="bg-white p-8 sm:p-10 border border-gray-200 shadow-sm space-y-6 rounded-[10px]">
                 <div className="border-b border-gray-100 pb-4 space-y-2">
                   <span className="text-altiusGold font-semibold uppercase tracking-widest text-xs block">
                     {currentProgram.subtitle}
@@ -155,8 +148,7 @@ export default function ProgramsContent({ initialTab }: { initialTab: string }) 
                 <div className="pt-6 border-t border-gray-100 flex justify-end">
                   <a
                     href="/contact"
-                    style={{ borderRadius: '6px' }}
-                    className="bg-altiusBlue text-white text-xs font-bold px-6 py-3 uppercase tracking-wider hover:bg-blue-600 transition shadow-sm"
+                    className="bg-gradient-to-l from-blue-900 via-altiusNavy to-blue-900 text-white text-xs font-bold px-6 py-3 uppercase tracking-wider hover:bg-blue-600 transition shadow-sm rounded-[8px]"
                   >
                     Enquire About This Program &rarr;
                   </a>
@@ -165,6 +157,11 @@ export default function ProgramsContent({ initialTab }: { initialTab: string }) 
             </div>
           </div>
 
+        </div>
+      </section>
+      <section className="py-16 px-6 bg-altiusLight text-altiusNavy">
+        <div className="max-w-7xl mx-auto">
+          <FutureReadyContent />
         </div>
       </section>
     </div>

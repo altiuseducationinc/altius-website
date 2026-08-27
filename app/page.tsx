@@ -9,23 +9,25 @@ import About from "@/components/home/About";
 import TestimonialsFAQ from "@/components/home/Testimonials";
 import FAQ from "@/components/home/FAQ";
 import HomeContactBanner from "@/components/home/HomeContactBanner";
+import BrandBanner from "@/components/BrandBanner";
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col justify-between">
       <div>
         <Navbar />
-        <Hero />
+        <Hero />        
+        <Courses />
+        <Stats />
         <Journey />
         <Passport />
-        <Stats />
-        <Courses />
         <About />
         <TestimonialsFAQ />
         <FAQ />
         <HomeContactBanner />
       </div>
       <Footer />
+      {/* <BrandBanner /> */}
     </main>
   );
 }

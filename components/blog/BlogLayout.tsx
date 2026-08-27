@@ -198,9 +198,12 @@ export default function BlogLayout() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
+          {/* Sidebar Section */}
           <div className="lg:col-span-3 space-y-8">
-            <div className="bg-altiusLight p-6 rounded-md border border-gray-200/80">
-              <h3 className="font-serif text-lg font-bold text-altiusNavy mb-4 flex items-center gap-2">
+            
+            {/* Categories Box with Subtle Gradient */}
+            <div className="bg-gradient-to-br from-blue-50/80 via-white to-amber-50/30 p-6 rounded-xl border border-gray-200/80 shadow-sm">
+              <h3 className="font-serif text-lg font-bold bg-gradient-to-r from-blue-950 via-altiusBlue to-altiusGold bg-clip-text text-transparent mb-4 flex items-center gap-2">
                 <svg className="w-4 h-4 text-altiusGold" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h7" />
                 </svg>
@@ -212,10 +215,10 @@ export default function BlogLayout() {
                     <button
                       onClick={() => setActiveCategory(cat.name)}
                       aria-pressed={activeCategory === cat.name}
-                      className={`text-sm font-medium transition text-left w-full py-2 px-3 rounded-md ${
+                      className={`text-sm font-medium transition text-left w-full py-2 px-3 rounded-lg ${
                         activeCategory === cat.name
-                          ? 'bg-altiusNavy text-white font-bold shadow-sm'
-                          : 'text-gray-700 hover:bg-gray-200/60'
+                          ? 'bg-gradient-to-r from-blue-950 to-altiusBlue text-white font-bold shadow-md'
+                          : 'text-gray-700 hover:bg-white/80 hover:text-altiusBlue'
                       }`}
                     >
                       {cat.name}
@@ -225,7 +228,8 @@ export default function BlogLayout() {
               </ul>
             </div>
 
-            <div className="relative rounded-md overflow-hidden shadow-md h-[340px] flex flex-col justify-end p-6 text-white">
+            {/* Promo Card Container */}
+            <div className="relative rounded-xl overflow-hidden shadow-lg h-[340px] flex flex-col justify-end p-6 text-white">
               <div className="absolute inset-0 z-0">
                 <Image
                   src="/student1.jpg"
@@ -233,18 +237,18 @@ export default function BlogLayout() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-altiusNavy/95 via-altiusNavy/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-950 via-altiusNavy/80 to-transparent" />
               </div>
 
               <div className="relative z-10 space-y-2">
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-altiusGold">Learn Higher. Achieve Greater.</span>
-                <h4 className="font-serif text-lg font-bold leading-snug">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-altiusGold drop-shadow">Learn Higher. Achieve Greater.</span>
+                <h4 className="font-serif text-lg font-bold leading-snug drop-shadow-sm">
                   Begin the 8-year journey from career discovery to career readiness.
                 </h4>
                 <div className="pt-2">
                   <Link
                     href="/programs"
-                    className="inline-block bg-altiusGold text-altiusNavy text-xs font-semibold px-4 py-2 rounded-md shadow hover:bg-yellow-500 transition tracking-wider uppercase"
+                    className="inline-block bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 text-altiusNavy text-xs font-extrabold px-4 py-2.5 rounded-lg shadow hover:opacity-95 transition tracking-wider uppercase"
                   >
                     Explore Programs
                   </Link>
@@ -253,18 +257,19 @@ export default function BlogLayout() {
             </div>
           </div>
 
+          {/* Main Content Section */}
           <div className="lg:col-span-9">
-            <div className="mb-6 flex items-center justify-between border-b border-gray-100 pb-4">
-              <h2 className="font-serif text-xl font-bold text-altiusNavy">
+            <div className="mb-6 flex items-center justify-between border-b border-gray-200 pb-4">
+              <h2 className="font-serif text-2xl font-bold bg-gradient-to-r from-blue-950 via-altiusBlue to-altiusGold bg-clip-text text-transparent">
                 {activeCategory} <span className="text-sm font-normal text-gray-500">({currentCategoryData.blogs.length} articles)</span>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {currentCategoryData.blogs.map((blog) => (
-                <div key={blog.id} className="flex flex-col space-y-4 group bg-white border border-gray-200/80 rounded-md p-5 shadow-sm hover:shadow transition">
+                <div key={blog.id} className="flex flex-col space-y-4 group bg-white border border-gray-200/80 rounded-xl p-5 shadow-sm hover:shadow-md transition">
 
-                  <div className="relative h-52 w-full rounded-md overflow-hidden bg-gray-100">
+                  <div className="relative h-52 w-full rounded-lg overflow-hidden bg-gray-100">
                     <Image
                       src={blog.image}
                       alt={blog.title}
@@ -276,7 +281,7 @@ export default function BlogLayout() {
                   <div className="space-y-2 flex-1 flex flex-col justify-between">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-[11px] uppercase tracking-wider font-bold text-gray-500">
-                        <span className="text-altiusGold bg-altiusNavy px-2 py-0.5 rounded-sm">{blog.category}</span>
+                        <span className="text-altiusGold bg-altiusNavy px-2.5 py-1 rounded-md">{blog.category}</span>
                         <span>{blog.date}</span>
                       </div>
 

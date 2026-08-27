@@ -24,6 +24,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-wider text-altiusNavy">
+          <Link href="/" className="hover:text-altiusBlue transition">Home</Link>
           <Link href="/about" className="hover:text-altiusBlue transition">About Us</Link>
           <Link href="/programs" className="hover:text-altiusBlue transition">Programs</Link>
           <Link href="/blog" className="hover:text-altiusBlue transition">Blog</Link>
@@ -34,7 +35,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link 
             href="/contact" 
-            className="bg-altiusBlue text-white text-xs font-bold px-6 py-3 rounded-xl shadow-md hover:bg-blue-600 transition tracking-wider uppercase"
+            className="bg-gradient-to-r from-blue-950 via-altiusNavy to-altiusBlue text-white text-xs font-bold px-6 py-3 rounded-xl shadow-md hover:opacity-95 transition tracking-wider uppercase"
           >
             Enrol Now
           </Link>
@@ -69,7 +70,7 @@ export default function Navbar() {
             <Link 
               href="/contact" 
               onClick={() => setIsOpen(false)}
-              className="block text-center bg-altiusBlue text-white text-xs font-bold py-3 rounded-xl shadow uppercase tracking-wider"
+              className="block text-center bg-gradient-to-r from-blue-950 via-altiusNavy to-altiusBlue text-white text-xs font-bold py-3 rounded-xl shadow uppercase tracking-wider"
             >
               Enrol Now
             </Link>

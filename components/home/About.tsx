@@ -15,10 +15,12 @@ export default function About() {
               <span className="text-altiusGold font-semibold uppercase tracking-widest text-xs block mb-2">
                 About Altius Education
               </span>
-              <h2 className="font-serif text-4xl sm:text-5xl font-bold text-altiusNavy leading-tight">
+              <h2 className="font-serif text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent leading-tight ">
                 We Don&apos;t Teach Classes.
                 <br />
-                <span className="text-altiusGold">We Build Careers, Year by Year.</span>
+                <span className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 bg-clip-text text-transparent">
+                  We Build Careers, Year by Year.
+                </span>
               </h2>
             </div>
 
@@ -38,13 +40,13 @@ export default function About() {
             <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <Link
                 href="/about"
-                className="inline-block bg-altiusBlue text-white text-xs font-semibold px-7 py-3.5 rounded-sm shadow-md hover:bg-blue-600 transition tracking-wider uppercase"
+                className="inline-block bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 text-altiusNavy text-xs font-extrabold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-altiusGold/25 hover:from-amber-400 hover:to-yellow-300 transition-all duration-300 tracking-wider uppercase text-center"
               >
                 Learn More About Us &rarr;
               </Link>
               <Link
                 href="/programs"
-                className="inline-block border-2 border-altiusNavy text-altiusNavy text-xs font-semibold px-7 py-3 rounded-sm hover:bg-altiusNavy hover:text-white transition tracking-wider uppercase"
+                className="inline-block border-2 border-altiusNavy text-altiusNavy text-xs font-bold px-7 py-3 rounded-xl hover:bg-altiusNavy hover:text-white transition tracking-wider uppercase text-center"
               >
                 View the Curriculum
               </Link>
@@ -60,7 +62,8 @@ export default function About() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 hidden sm:block bg-altiusNavy text-white p-6 rounded-[10px] shadow-xl max-w-xs border border-white/10">
+            {/* Floating box with dark blue gradient background */}
+            <div className="absolute -bottom-6 -left-6 hidden sm:block bg-gradient-to-br from-blue-950 via-altiusNavy to-blue-900 text-white p-6 rounded-[10px] shadow-xl max-w-xs border border-white/15">
               <p className="font-serif text-altiusGold font-bold text-lg mb-1">Discover → Launch.</p>
               <p className="text-gray-300 text-xs leading-relaxed">
                 An 8-year system, 7 competency pillars, and one passport of real-world proof.

@@ -91,7 +91,7 @@ export default function ContactForm() {
 
           <button 
             type="submit" 
-            className="w-full bg-altiusBlue text-white text-xs font-bold py-3.5 rounded-xl shadow-md hover:bg-blue-600 transition tracking-wider uppercase"
+            className="w-full bg-gradient-to-r from-blue-950 via-altiusNavy to-altiusBlue text-white text-xs font-bold py-3.5 rounded-xl shadow-md hover:opacity-95 transition tracking-wider uppercase"
           >
             Send
           </button>

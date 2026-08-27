@@ -95,7 +95,7 @@ export default function SpecialtyPrograms() {
           <span className="text-altiusGold font-semibold uppercase tracking-widest text-xs block">
             Beyond the System
           </span>
-          <h2 className="font-serif text-3xl sm:text-[44px] font-bold text-altiusNavy">
+          <h2 className="font-serif text-3xl sm:text-[44px] font-bold bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent leading-tight">
             Specialty Programs
           </h2>
           <p className="text-gray-600 text-[15px]">
@@ -115,10 +115,12 @@ export default function SpecialtyPrograms() {
               className="bg-white p-8 border border-gray-200/80 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between space-y-6 shrink-0"
             >
               <div className="space-y-4">
-                <div className="w-12 h-12 rounded-[5px] bg-altiusNavy text-altiusGold flex items-center justify-center shadow-sm">
+                {/* Fully rounded circle with dark blue gradient background */}
+                <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-950 via-altiusNavy to-blue-900 text-altiusGold flex items-center justify-center shadow-sm">
                   {program.icon}
                 </div>
-                <h3 className="font-serif font-bold text-lg text-altiusNavy leading-snug">
+                {/* Heading text with a lighter shade of blue */}
+                <h3 className="font-serif font-bold text-lg text-blue-900 leading-snug">
                   {program.title}
                 </h3>
                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">

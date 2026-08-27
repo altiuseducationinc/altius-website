@@ -3,6 +3,7 @@ import AboutHero from '@/components/about/AboutHero';
 import ProgramSteps from '@/components/about/ProgramSteps';
 import VisionSection from '@/components/about/VisionSection';
 import LeadershipTeam from '@/components/about/LeadershipTeam';
+import FutureReadyPassport from '@/components/about/FutureReadyPassport';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -19,6 +20,7 @@ export default function AboutPage() {
         <Navbar />
         <AboutHero />
         <ProgramSteps />
+        <FutureReadyPassport />
         <VisionSection />
         <LeadershipTeam />
       </div>

@@ -45,7 +45,7 @@ export default function FAQ() {
           <span className="text-altiusGold font-semibold uppercase tracking-widest text-xs block mb-2">
             Got Questions?
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-altiusNavy">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent">
             Frequently Asked Questions
           </h2>
         </div>
