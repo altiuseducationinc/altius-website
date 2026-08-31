@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PartnerHero from '@/components/partner/PartnerHero';
-import PartnerForm from '@/components/partner/PartnerForm';
+import PartnerFormEmbed from '@/components/partner/PartnerFormEmbed';
 
 export const metadata: Metadata = {
   title: 'Partner With Altius',
@@ -19,7 +19,7 @@ export default function PartnerPage() {
 
         <section className="relative px-6 -mt-20 sm:-mt-24">
           <div className="max-w-6xl mx-auto">
-            <PartnerForm />
+            <PartnerFormEmbed />
           </div>
         </section>
       </div>
