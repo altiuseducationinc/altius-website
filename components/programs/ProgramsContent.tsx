@@ -13,22 +13,53 @@ import CoopContent from '@/components/programs/CoopContent';
 import CncContent from '@/components/programs/CncContent';
 import Tech3dContent from '@/components/programs/Tech3dContent';
 import WeldingContent from '@/components/programs/WeldingContent';
+import ProgramApplicationForm from '@/components/programs/ProgramApplicationForm';
 
 const TAB_MAP: Record<string, string> = {
+  // Tutoring aliases
   'academic-tutoring': 'tutoring',
-  tutoring: 'tutoring',
+  'tutoring': 'tutoring',
+  'academic': 'tutoring',
+
+  // Language aliases
   'language-programs': 'languages',
-  languages: 'languages',
+  'languages': 'languages',
+  'language': 'languages',
+
+  // TCF/TEF aliases
   'tcf-tef-preparation': 'tcf-tef',
   'tcf-tef': 'tcf-tef',
+  'tcf': 'tcf-tef',
+  'tef': 'tcf-tef',
+
+  // Music aliases
   'music-programs': 'music',
-  music: 'music',
+  'music': 'music',
+
+  // Co-op aliases
+  'co-op-career-focused-programs': 'coop',
+  'co-op-and-career-focused-programs': 'coop',
+  'co-op': 'coop',
+  'coop': 'coop',
+  'career-focused': 'coop',
+
+  // CNC aliases
   'cnc-programming': 'cnc',
-  cnc: 'cnc',
+  'cnc': 'cnc',
+
+  // 3D Printing aliases
   '3d-printing': '3d-printing',
+  '3d-printing-technology': '3d-printing',
+  '3d-printing-and-technology': '3d-printing',
+  'tech-3d': '3d-printing',
+  'technology': '3d-printing',
+
+  // Welding aliases
+  'welding-skilled-trades': 'welding',
   'welding-trades': 'welding',
-  welding: 'welding',
-  coop: 'coop',
+  'welding-and-skilled-trades': 'welding',
+  'welding': 'welding',
+  'trades': 'welding',
 };
 
 const programsData = [
@@ -100,25 +131,42 @@ const programsData = [
 
 export default function ProgramsContent({ initialTab }: { initialTab?: string }) {
   const searchParams = useSearchParams();
-  const tabFromQuery = searchParams.get('tab') || initialTab || '';
+  const rawTab = searchParams.get('tab') || initialTab || '';
+  const normalizedKey = rawTab.toLowerCase().trim();
 
   const [activeTab, setActiveTab] = useState(
-    () => TAB_MAP[tabFromQuery] ?? 'tutoring'
+    () => TAB_MAP[normalizedKey] ?? 'tutoring'
   );
 
   useEffect(() => {
-    if (tabFromQuery && TAB_MAP[tabFromQuery]) {
-      setActiveTab(TAB_MAP[tabFromQuery]);
-    }
-  }, [tabFromQuery]);
+    if (normalizedKey && TAB_MAP[normalizedKey]) {
+      const resolvedTab = TAB_MAP[normalizedKey];
+      setActiveTab(resolvedTab);
 
+      // Scroll to the specialty programs section smoothly
+      const targetElement = document.getElementById('specialty-programs');
+      if (targetElement) {
+        setTimeout(() => {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+      }
+    }
+  }, [normalizedKey]);
 
   const currentProgram = programsData.find((p) => p.id === activeTab) || programsData[0];
 
   return (
     <div>
       <ProgramsHero />
-      <section id="specialty-programs" className="py-16 px-6 bg-altiusLight text-altiusNavy border-t border-gray-200/70 scroll-mt-28">
+      <section className="py-16 px-6 bg-altiusLight text-altiusNavy">
+        <div className="max-w-7xl mx-auto">
+          <FutureReadyContent />
+        </div>
+      </section>
+      <section
+        id="specialty-programs"
+        className="py-16 px-6 bg-altiusLight text-altiusNavy border-t border-gray-200/70 scroll-mt-28"
+      >
         <div className="max-w-7xl mx-auto space-y-10">
 
           <div className="text-center max-w-2xl mx-auto space-y-3">
@@ -156,12 +204,19 @@ export default function ProgramsContent({ initialTab }: { initialTab?: string })
 
                 <div>{currentProgram.component}</div>
 
-                <div className="pt-6 border-t border-gray-100 flex justify-end">
+                <div className="pt-6 border-t border-gray-100 flex flex-wrap items-center justify-end gap-3">
                   <a
                     href="/contact"
-                    className="bg-gradient-to-l from-blue-900 via-altiusNavy to-blue-900 text-white text-xs font-bold px-6 py-3 uppercase tracking-wider hover:bg-blue-600 transition shadow-sm rounded-[8px]"
+                    className="bg-gray-100 text-altiusNavy text-xs font-bold px-5 py-3 uppercase tracking-wider hover:bg-gray-200 transition shadow-xs rounded-[8px]"
                   >
-                    Enquire About This Program &rarr;
+                    Enquire / Contact Us
+                  </a>
+                  <a
+                    href="#apply-now"
+                    className="bg-gradient-to-l from-blue-900 via-altiusNavy to-blue-900 text-white text-xs font-bold px-6 py-3 uppercase tracking-wider hover:bg-blue-600 transition shadow-sm rounded-[8px] flex items-center gap-2"
+                  >
+                    <span>Apply for Program</span>
+                    <span>&darr;</span>
                   </a>
                 </div>
               </div>
@@ -170,11 +225,10 @@ export default function ProgramsContent({ initialTab }: { initialTab?: string })
 
         </div>
       </section>
-      <section className="py-16 px-6 bg-altiusLight text-altiusNavy">
-        <div className="max-w-7xl mx-auto">
-          <FutureReadyContent />
-        </div>
-      </section>
+
+      {/* Program Application Section */}
+      <ProgramApplicationForm />
+
     </div>
   );
 }

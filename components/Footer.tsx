@@ -484,6 +484,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-altiusGold transition">Home</Link></li>
               <li><Link href="/about" className="hover:text-altiusGold transition">About Us</Link></li>
               <li><Link href="/programs" className="hover:text-altiusGold transition">Our Programs</Link></li>
+              <li><Link href="/curriculum" className="hover:text-altiusGold transition">Ontario Curriculum</Link></li>
               <li><Link href="/blog" className="hover:text-altiusGold transition">Blog & Articles</Link></li>
               <li><Link href="/contact" className="hover:text-altiusGold transition">Contact Us</Link></li>
             </ul>

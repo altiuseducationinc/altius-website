@@ -130,7 +130,7 @@ export default function SpecialtyPrograms() {
 
               <div className="pt-2">
                 <a
-                  href={`/programs?tab=${program.tab}`}
+                  href={`/programs?tab=${program.tab}#specialty-programs`}
                   className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-altiusBlue hover:underline"
                 >
                   Learn More &rarr;

@@ -23,10 +23,11 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-wider text-altiusNavy">
+        <nav className="hidden md:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-altiusNavy">
           <Link href="/" className="hover:text-altiusBlue transition">Home</Link>
           <Link href="/about" className="hover:text-altiusBlue transition">About Us</Link>
           <Link href="/programs" className="hover:text-altiusBlue transition">Programs</Link>
+          <Link href="/curriculum" className="hover:text-altiusBlue transition">Curriculum</Link>
           <Link href="/blog" className="hover:text-altiusBlue transition">Blog</Link>
           <Link href="/contact" className="hover:text-altiusBlue transition">Contact Us</Link>
         </nav>
@@ -64,6 +65,7 @@ export default function Navbar() {
           <Link href="/" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Home</Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">About Us</Link>
           <Link href="/programs" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Programs</Link>
+          <Link href="/curriculum" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Curriculum</Link>
           <Link href="/blog" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Blog</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Contact Us</Link>
           <div className="pt-2">
