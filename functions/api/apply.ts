@@ -1,42 +1,74 @@
-import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-export async function POST(request: Request) {
-  try {
-    const formData = await request.formData();
+interface Env {
+  ADMIN_EMAIL?: string;
+  SMTP_HOST?: string;
+  SMTP_PORT?: string;
+  SMTP_SECURE?: string;
+  SMTP_USER?: string;
+  SMTP_PASS?: string;
+  SMTP_FROM_NAME?: string;
+  SMTP_FROM_EMAIL?: string;
+}
 
-    const fullName = (formData.get('fullName') as string)?.trim();
-    const currentGrade = (formData.get('currentGrade') as string)?.trim();
-    const targetField = (formData.get('targetField') as string)?.trim();
-    const durationTimeframe = (formData.get('durationTimeframe') as string)?.trim();
-    const facultyName = (formData.get('facultyName') as string)?.trim();
-    const agreeTerms = formData.get('agreeTerms');
+function readFormData(formData: FormData): Record<string, FormDataEntryValue | null> {
+  const result: Record<string, FormDataEntryValue | null> = {};
+  for (const key of ['fullName', 'currentGrade', 'targetField', 'durationTimeframe', 'facultyName', 'agreeTerms']) {
+    result[key] = formData.get(key);
+  }
+  return result;
+}
+
+export async function onRequest(context: { request: Request; env: Env }) {
+  try {
+    const { request, env } = context;
+
+    if (request.method !== 'POST') {
+      return new Response(JSON.stringify({ error: 'Method not allowed.' }), {
+        status: 405,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
+    const formData = await request.formData();
+    const fields = readFormData(formData);
+
+    const fullName = String(fields.fullName ?? '').trim();
+    const currentGrade = String(fields.currentGrade ?? '').trim();
+    const targetField = String(fields.targetField ?? '').trim();
+    const durationTimeframe = String(fields.durationTimeframe ?? '').trim();
+    const facultyName = String(fields.facultyName ?? '').trim();
+    const agreeTerms = fields.agreeTerms;
     const isTermsAccepted = agreeTerms === 'true' || agreeTerms === 'on';
     const confirmationFile = formData.get('confirmationLetter') as File | null;
 
-    // Validate required fields
+    const json = (body: unknown, status = 200) =>
+      new Response(JSON.stringify(body), {
+        status,
+        headers: { 'Content-Type': 'application/json' },
+      });
+
     if (!fullName || !currentGrade || !targetField || !durationTimeframe || !facultyName) {
-      return NextResponse.json(
+      return json(
         { error: 'All text fields are required. Please fill in the complete form.' },
-        { status: 400 }
+        400
       );
     }
 
     if (!isTermsAccepted) {
-      return NextResponse.json(
+      return json(
         { error: 'You must agree to the Terms & Conditions and liability disclaimer to proceed.' },
-        { status: 400 }
+        400
       );
     }
 
     if (!confirmationFile || confirmationFile.size === 0) {
-      return NextResponse.json(
+      return json(
         { error: 'Please upload a valid Letter of Confirmation (PDF or Document).' },
-        { status: 400 }
+        400
       );
     }
 
-    // Generate unique reference ID
     const referenceId = `ALT-${new Date().getFullYear()}-${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
     const submissionDate = new Date().toLocaleString('en-US', {
       timeZone: 'America/Toronto',
@@ -44,23 +76,20 @@ export async function POST(request: Request) {
       timeStyle: 'medium',
     });
 
-    // Extract file attachment
     const arrayBuffer = await confirmationFile.arrayBuffer();
     const fileBuffer = Buffer.from(arrayBuffer);
     const fileName = confirmationFile.name || 'confirmation-letter.pdf';
     const fileSizeFormatted = `${(confirmationFile.size / (1024 * 1024)).toFixed(2)} MB`;
 
-    // Email recipient
-    const recipientEmail = process.env.ADMIN_EMAIL || 'sahilpoll1802@gmail.com';
-    const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
-    const smtpPort = Number(process.env.SMTP_PORT) || 465;
-    const smtpSecure = process.env.SMTP_SECURE !== 'false';
-    const smtpUser = process.env.SMTP_USER || '';
-    const smtpPass = process.env.SMTP_PASS || '';
-    const fromName = process.env.SMTP_FROM_NAME || 'Altius FutureReady Admissions';
-    const fromEmail = process.env.SMTP_FROM_EMAIL || smtpUser || recipientEmail;
+    const recipientEmail = env.ADMIN_EMAIL || 'sahilpoll1802@gmail.com';
+    const smtpHost = env.SMTP_HOST || 'smtp.gmail.com';
+    const smtpPort = Number(env.SMTP_PORT) || 465;
+    const smtpSecure = env.SMTP_SECURE !== 'false';
+    const smtpUser = env.SMTP_USER || '';
+    const smtpPass = env.SMTP_PASS || '';
+    const fromName = env.SMTP_FROM_NAME || 'Altius FutureReady Admissions';
+    const fromEmail = env.SMTP_FROM_EMAIL || smtpUser || recipientEmail;
 
-    // HTML Email Template
     const emailHtml = `
 <!DOCTYPE html>
 <html>
@@ -150,24 +179,22 @@ export async function POST(request: Request) {
 </html>
 `;
 
-    // Check if SMTP credentials are provided
     if (!smtpUser || !smtpPass) {
       console.warn(
-        '⚠️ [Altius Admissions] SMTP credentials (SMTP_USER / SMTP_PASS) not configured in .env.local.\n' +
+        '⚠️ [Altius Admissions] SMTP credentials (SMTP_USER / SMTP_PASS) not configured.\n' +
         `Simulating successful dispatch to ${recipientEmail} for testing.\n` +
         `Candidate: ${fullName} | Grade: ${currentGrade} | Field: ${targetField} | File: ${fileName} (${fileSizeFormatted})`
       );
 
-      return NextResponse.json({
+      return json({
         success: true,
         referenceId,
         simulated: true,
         message:
-          'Application received! Note: SMTP credentials are not yet set in .env.local, so email was logged to the server console in development mode.',
+          'Application received! Note: SMTP credentials are not yet set, so email was logged to the server console in development mode.',
       });
     }
 
-    // Configure Nodemailer transporter
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
@@ -178,7 +205,6 @@ export async function POST(request: Request) {
       },
     });
 
-    // Send email with attachment
     await transporter.sendMail({
       from: `"${fromName}" <${fromEmail}>`,
       to: recipientEmail,
@@ -195,7 +221,7 @@ export async function POST(request: Request) {
       ],
     });
 
-    return NextResponse.json({
+    return json({
       success: true,
       referenceId,
       message: 'Application and confirmation document submitted successfully! Our admissions team will review your application.',
@@ -203,9 +229,9 @@ export async function POST(request: Request) {
   } catch (error: unknown) {
     console.error('Error submitting program application:', error);
     const errorMessage = error instanceof Error ? error.message : 'An unexpected error occurred during submission.';
-    return NextResponse.json(
-      { error: errorMessage },
-      { status: 500 }
-    );
+    return new Response(JSON.stringify({ error: errorMessage }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
