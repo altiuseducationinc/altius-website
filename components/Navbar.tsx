@@ -29,6 +29,7 @@ export default function Navbar() {
           <Link href="/programs" className="hover:text-altiusBlue transition">Programs</Link>
           <Link href="/curriculum" className="hover:text-altiusBlue transition">Curriculum</Link>
           <Link href="/blog" className="hover:text-altiusBlue transition">Blog</Link>
+          <Link href="/partner" className="hover:text-altiusBlue transition">Partners</Link>
           <Link href="/contact" className="hover:text-altiusBlue transition">Contact Us</Link>
         </nav>
 
@@ -67,6 +68,7 @@ export default function Navbar() {
           <Link href="/programs" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Programs</Link>
           <Link href="/curriculum" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Curriculum</Link>
           <Link href="/blog" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Blog</Link>
+          <Link href="/partner" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Partners</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="block hover:text-altiusBlue transition py-1">Contact Us</Link>
           <div className="pt-2">
             <Link 
