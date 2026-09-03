@@ -109,7 +109,7 @@ export default function AboutHero() {
               </svg>
               <span className="font-semibold uppercase tracking-widest text-xs">Who We Are</span>
             </div>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent leading-snug">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-altiusNavy leading-snug">
               An 8-Year System for Career Readiness — Not a Regular Tuition Centre
             </h2>
           </div>

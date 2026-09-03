@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import ProgramsHero from '@/components/programs/ProgramsHero';
 import FutureReadyContent from '@/components/programs/FutureReadyContent';
 import ProgramsSidebar from '@/components/programs/ProgramsSidebar';
@@ -13,7 +14,6 @@ import CoopContent from '@/components/programs/CoopContent';
 import CncContent from '@/components/programs/CncContent';
 import Tech3dContent from '@/components/programs/Tech3dContent';
 import WeldingContent from '@/components/programs/WeldingContent';
-import ProgramApplicationForm from '@/components/programs/ProgramApplicationForm';
 
 const TAB_MAP: Record<string, string> = {
   // Tutoring aliases
@@ -204,20 +204,20 @@ export default function ProgramsContent({ initialTab }: { initialTab?: string })
 
                 <div>{currentProgram.component}</div>
 
-                <div className="pt-6 border-t border-gray-100 flex flex-wrap items-center justify-end gap-3">
-                  <a
+                <div className="pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3">
+                  <Link
                     href="/contact"
-                    className="bg-gray-100 text-altiusNavy text-xs font-bold px-5 py-3 uppercase tracking-wider hover:bg-gray-200 transition shadow-xs rounded-[8px]"
+                    className="bg-gray-100 text-altiusNavy text-xs font-bold px-4 sm:px-5 py-2.5 sm:py-3 uppercase tracking-wider hover:bg-gray-200 transition shadow-xs rounded-xl text-center"
                   >
                     Enquire / Contact Us
-                  </a>
-                  <a
-                    href="#apply-now"
-                    className="bg-gradient-to-l from-blue-900 via-altiusNavy to-blue-900 text-white text-xs font-bold px-6 py-3 uppercase tracking-wider hover:bg-blue-600 transition shadow-sm rounded-[8px] flex items-center gap-2"
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="bg-gradient-to-r from-blue-950 via-altiusNavy to-altiusBlue text-white text-xs font-bold px-5 sm:px-6 py-2.5 sm:py-3 uppercase tracking-wider hover:opacity-95 transition shadow-sm rounded-xl flex items-center justify-center gap-2 text-center"
                   >
                     <span>Apply for Program</span>
-                    <span>&darr;</span>
-                  </a>
+                    <span>&rarr;</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -226,8 +226,7 @@ export default function ProgramsContent({ initialTab }: { initialTab?: string })
         </div>
       </section>
 
-      {/* Program Application Section */}
-      <ProgramApplicationForm />
+
 
     </div>
   );

@@ -199,7 +199,7 @@ export default function VisionSection() {
               Mission & Vision
             </span>
 
-            <h2 className="font-serif text-3xl lg:text-[40px] font-bold bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent leading-[1.15] mb-6 tracking-tight">
+            <h2 className="font-serif text-3xl lg:text-[40px] font-bold text-altiusNavy leading-snug mb-6 tracking-tight">
               From Career Discovery in Grade 5 to Career Readiness in Grade 12
             </h2>
 
@@ -250,7 +250,7 @@ export default function VisionSection() {
                     </div>
 
                     <div className="flex flex-col">
-                      <h3 className="font-serif text-3xl font-bold bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent leading-none mb-1">
+                      <h3 className="font-serif text-3xl font-bold text-altiusNavy leading-none mb-1">
                         {stat.value}
                       </h3>
                       <p className="text-[#667085] text-[10px] uppercase tracking-[0.15em] font-bold leading-tight">

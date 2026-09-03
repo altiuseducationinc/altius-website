@@ -130,7 +130,7 @@ export default function Journey() {
           <span className="text-altiusGold font-semibold uppercase tracking-widest text-xs block">
             The Flagship System
           </span>
-          <h2 className="font-serif text-3xl sm:text-[44px] font-bold bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent leading-tight">
+          <h2 className="font-serif text-3xl sm:text-[44px] font-bold text-altiusNavy leading-normal">
             The 8-Year Altius FutureReady™ Journey
           </h2>
           <p className="text-gray-600 text-[15px] leading-relaxed">

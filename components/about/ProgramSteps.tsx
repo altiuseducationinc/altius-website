@@ -249,7 +249,7 @@ export default function ProgramSteps() {
           <span className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 bg-clip-text text-transparent font-bold uppercase tracking-[0.2em] text-[11px]">
             FutureReady™ Journey
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-altiusNavy leading-snug">
             8 Years. One Journey. <br className="hidden sm:block" /> A Future Ready Student.
           </h2>
           <p className="text-[#667085] text-sm sm:text-base font-sans mt-4 max-w-lg mx-auto">

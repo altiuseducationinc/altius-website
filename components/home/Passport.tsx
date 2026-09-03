@@ -212,10 +212,10 @@ const PILLAR_ICONS = [
 
 export default function Passport() {
   return (
-    <section className="min-h-screen h-auto lg:h-screen px-6 bg-gradient-to-br from-blue-950 via-altiusNavy to-blue-900 text-white relative overflow-hidden flex items-center">
+    <section className="min-h-screen py-16 lg:py-24 px-6 bg-gradient-to-br from-blue-950 via-altiusNavy to-blue-900 text-white relative overflow-hidden flex items-center">
       <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-altiusBlue/20 blur-3xl pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto relative w-full py-12 lg:py-0">
+      <div className="max-w-7xl mx-auto relative w-full py-6 lg:py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
           {/* Left Column */}
@@ -239,7 +239,7 @@ export default function Passport() {
             <div className="pt-2">
               <Link
                 href="/about"
-                className="inline-block bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 text-altiusNavy text-xs sm:text-sm font-extrabold px-8 py-4 rounded-xl shadow-lg hover:shadow-altiusGold/25 hover:from-amber-400 hover:to-yellow-300 transition-all duration-300 tracking-wider uppercase text-center"
+                className="inline-block bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 text-altiusNavy text-xs sm:text-sm font-extrabold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-altiusGold/25 hover:from-amber-400 hover:to-yellow-300 transition-all duration-300 tracking-wider uppercase text-center"
               >
                 How the System Works
               </Link>

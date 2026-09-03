@@ -46,8 +46,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${montserrat.variable} font-sans bg-altiusLight text-altiusNavy antialiased`}>
-        <AnnouncementBar />
+      <body className={`${playfair.variable} ${montserrat.variable} font-sans bg-altiusLight text-altiusNavy antialiased overflow-x-hidden`}>
         {children}
         <WhatsAppButton />
       </body>

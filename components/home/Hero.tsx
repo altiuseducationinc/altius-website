@@ -220,17 +220,17 @@ export default function Hero() {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <Link
                 href={current.primaryBtnLink}
-                className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 text-altiusNavy text-xs font-extrabold px-7 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-altiusGold/30 hover:from-amber-400 hover:to-yellow-300 transition-all duration-300 tracking-wider uppercase text-center flex items-center justify-center gap-2 group"
+                className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 text-altiusNavy text-[11px] sm:text-xs font-extrabold px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl shadow-lg hover:shadow-altiusGold/30 hover:from-amber-400 hover:to-yellow-300 transition-all duration-300 tracking-wider uppercase text-center flex items-center justify-center gap-2 group shrink-0"
               >
                 <span>{current.primaryBtnText}</span>
                 <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
               </Link>
               <Link
                 href={current.secondaryBtnLink}
-                className="border-2 border-white/80 text-white text-xs font-bold px-7 py-3 sm:py-3.5 rounded-xl hover:bg-white hover:text-altiusNavy transition-all duration-300 tracking-wider uppercase text-center backdrop-blur-xs"
+                className="border-2 border-white/80 text-white text-[11px] sm:text-xs font-bold px-5 sm:px-7 py-2.5 sm:py-3 rounded-xl hover:bg-white hover:text-altiusNavy transition-all duration-300 tracking-wider uppercase text-center backdrop-blur-xs shrink-0"
               >
                 {current.secondaryBtnText}
               </Link>

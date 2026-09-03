@@ -32,7 +32,7 @@ export default function ProgramsSidebar({ activeTab, setActiveTab, programsList 
       </button>
 
       {/* Desktop Heading */}
-      <h3 className="hidden lg:flex font-serif font-bold text-xs uppercase tracking-wider bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent px-3 py-2 border-b border-gray-100 mb-2 items-center gap-2.5">
+      <h3 className="hidden lg:flex font-serif font-bold text-xs uppercase tracking-wider text-altiusNavy px-3 py-2 border-b border-gray-100 mb-2 items-center gap-2.5">
         <svg className="w-4 h-4 text-altiusGold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>

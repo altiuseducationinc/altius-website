@@ -15,10 +15,10 @@ export default function About() {
               <span className="text-altiusGold font-semibold uppercase tracking-widest text-xs block mb-2">
                 About Altius Education
               </span>
-              <h2 className="font-serif text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-600 bg-clip-text text-transparent leading-tight ">
+              <h2 className="font-serif text-4xl sm:text-5xl font-bold text-altiusNavy leading-snug">
                 We Don&apos;t Teach Classes.
                 <br />
-                <span className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 bg-clip-text text-transparent inline-block pb-1">
                   We Build Careers, Year by Year.
                 </span>
               </h2>

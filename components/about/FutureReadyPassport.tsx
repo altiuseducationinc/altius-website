@@ -30,7 +30,7 @@ const getPillarIcon = (title: string) => {
 export default function FutureReadyPassport() {
   return (
     <div 
-      className="relative w-screen left-1/2 -translate-x-1/2 mt-24 mb-16 py-20 sm:py-28 overflow-hidden bg-[url('/abt.png')] bg-fixed bg-center bg-cover bg-no-repeat"
+      className="relative w-full mt-16 sm:mt-24 mb-16 py-20 sm:py-28 overflow-hidden bg-[url('/abt.png')] bg-cover bg-center bg-no-repeat"
     >
       {/* --- Dark Overlays for Contrast --- */}
       <div className="absolute inset-0 bg-altiusNavy/40 mix-blend-multiply pointer-events-none" />
