@@ -1,242 +1,220 @@
-// // 'use client';
-
-// // import Link from 'next/link';
-// // import { PROGRESSION, STAGES, PILLARS } from '@/components/programs/futurereadyData';
-
-// // export default function ProgramSteps() {
-// //   return (
-// //     <section className="py-20 px-6 bg-altiusLight text-altiusNavy border-y border-gray-200">
-// //       <div className="max-w-6xl mx-auto space-y-12">
-
-// //         <div className="text-center max-w-xl mx-auto space-y-2">
-// //           <span className="text-altiusGold font-semibold uppercase tracking-widest text-xs">Our Curriculum</span>
-// //           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-altiusNavy">
-// //             How the 8-Year System Works
-// //           </h2>
-// //           <p className="text-gray-600 text-sm">
-// //             Eight stages. One escalating path. Every year students answer a bigger question.
-// //           </p>
-// //         </div>
-
-// //         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-// //           {PROGRESSION.map((p, index) => {
-// //             const stage = STAGES[index];
-// //             return (
-// //               <div
-// //                 key={p.stage}
-// //                 className="bg-white p-6 rounded-md border border-gray-200/80 shadow-sm hover:shadow transition flex flex-col justify-between space-y-4"
-// //               >
-// //                 <div className="flex items-center justify-between">
-// //                   <div className="w-10 h-10 rounded-full bg-altiusNavy text-altiusGold flex items-center justify-center text-lg">
-// //                     {stage?.emoji}
-// //                   </div>
-// //                   <span className="text-[10px] font-bold uppercase tracking-widest bg-altiusGold/15 text-altiusGold px-2.5 py-1 rounded-full">
-// //                     {p.grade}
-// //                   </span>
-// //                 </div>
-// //                 <div className="space-y-1">
-// //                   <h3 className="font-serif font-bold text-lg text-altiusNavy">{p.stage}</h3>
-// //                   <p className="font-serif italic text-xs text-gray-600">&ldquo;{p.question}&rdquo;</p>
-// //                 </div>
-// //               </div>
-// //             );
-// //           })}
-// //         </div>
-
-// //         <div className="bg-altiusNavy rounded-md p-8 text-white">
-// //           <div className="text-center mb-8 space-y-1">
-// //             <span className="text-altiusGold font-semibold uppercase tracking-widest text-xs">
-// //               The FutureReady Passport
-// //             </span>
-// //             <h3 className="font-serif text-xl sm:text-2xl font-bold">
-// //               Proof of growth across 7 competency pillars, every single year
-// //             </h3>
-// //           </div>
-// //           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-// //             {PILLARS.map((pillar) => (
-// //               <div key={pillar.title} className="bg-white/5 border border-white/10 rounded-md p-4 flex items-center gap-3">
-// //                 <span className="text-xl">{pillar.emoji}</span>
-// //                 <div>
-// //                   <p className="font-serif font-bold text-sm">{pillar.title}</p>
-// //                   <p className="text-gray-400 text-[11px] leading-snug">{pillar.desc}</p>
-// //                 </div>
-// //               </div>
-// //             ))}
-// //           </div>
-// //         </div>
-
-// //         <div className="text-center">
-// //           <Link
-// //             href="/programs"
-// //             className="inline-block bg-altiusBlue text-white text-xs font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-blue-600 transition tracking-wider uppercase"
-// //           >
-// //             Explore the Curriculum
-// //           </Link>
-// //         </div>
-
-// //       </div>
-// //     </section>
-// //   );
-// // }
-
-
-
-
-// 'use client';
-// import { PROGRESSION, STAGES } from '@/components/programs/futurereadyData';
-
-// export default function ProgramSteps() {
-//   return (
-//     <section className="py-20 lg:py-32 px-6 bg-[#F8F9FB] border-y border-gray-200 overflow-hidden">
-//       <div className="max-w-7xl mx-auto">
-
-//         {/* --- INTRODUCTION SECTION --- */}
-//         <div className="text-center max-w-2xl mx-auto space-y-4 mb-20 lg:mb-28">
-//           <span className="text-[#D5A928] font-bold uppercase tracking-[0.2em] text-[11px]">
-//             FutureReady™ Journey
-//           </span>
-//           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0E1B3D] leading-tight">
-//             8 Years. One Journey. <br className="hidden sm:block" /> A Future Ready Student.
-//           </h2>
-//           <p className="text-[#667085] text-sm sm:text-base font-sans mt-4 max-w-lg mx-auto">
-//             From discovering who they are to applying their skills in the real world, every grade builds the next step.
-//           </p>
-//         </div>
-
-//         {/* --- LINEAR TIMELINE GRID --- */}
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-6 max-w-6xl mx-auto relative z-10">
-
-//           {PROGRESSION.map((p, index) => {
-//             const stage = STAGES[index];
-//             const stageNumber = String(index + 1).padStart(2, '0');
-//             const isNavyNode = index === 0 || index === 7;
-//             return (
-//               <div
-//                 key={p.stage}
-//                 className="relative flex flex-col items-center text-center group"
-//               >
-
-//                 {/* --- 1. TIMELINE CONNECTING LINES --- */}
-//                 {/* Desktop horizontal lines (Connects 0->1, 1->2, 2->3 AND 4->5, 5->6, 6->7) */}
-//                 {(index !== 3 && index !== 7) && (
-//                   <div className="hidden lg:block absolute top-5 left-1/2 w-full h-[2px] bg-[#0E1B3D] -z-10 opacity-80" />
-//                 )}
-//                 {/* Tablet horizontal lines */}
-//                 {(index === 0 || index === 2 || index === 4 || index === 6) && (
-//                   <div className="hidden sm:block lg:hidden absolute top-5 left-1/2 w-full h-[2px] bg-[#0E1B3D] -z-10 opacity-80" />
-//                 )}
-//                 {/* Mobile vertical line */}
-//                 {index !== 7 && (
-//                   <div className="block sm:hidden absolute top-10 left-1/2 -translate-x-1/2 w-[2px] h-[calc(100%+4rem)] bg-[#0E1B3D] -z-10 opacity-80" />
-//                 )}
-
-//                 {/* --- 2. TIMELINE NUMBER NODE --- */}
-//                 <div
-//                   className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-[13px] text-white relative z-10 shadow-sm transition-transform group-hover:scale-110
-//     ${isNavyNode ? 'bg-[#0E1B3D]' : 'bg-[#D5A928]'}
-//   `}
-//                 >
-//                   {stageNumber}
-//                 </div>
-
-//                 {/* --- 3. FLOATING ICON --- */}
-//                 <div className="mt-8 mb-6 text-[#0E1B3D] [&>svg]:w-9 [&>svg]:h-9 [&>svg]:stroke-[1.5px] transition-transform group-hover:-translate-y-1 mx-auto">
-//                   {stage?.emoji}
-//                 </div>
-
-//                 {/* --- 4. GRADE LABEL --- */}
-//                 <p className="text-[#D5A928] text-[11px] font-bold uppercase tracking-[0.15em] mb-1.5">
-//                   {p.grade}
-//                 </p>
-
-//                 {/* --- 5. STAGE TITLE --- */}
-//                 <h3 className="font-serif text-2xl lg:text-[26px] font-bold text-[#0E1B3D] mb-4">
-//                   {p.stage}
-//                 </h3>
-
-//                 {/* --- 6. GOLD DIVIDER LINE --- */}
-//                 <div className="w-10 h-[3px] bg-[#D5A928] mb-4 mx-auto transition-all group-hover:w-16" />
-
-//                 {/* --- 7. GUIDING QUESTION --- */}
-//                 <p className="font-serif italic text-[15px] text-[#667085] leading-relaxed px-2">
-//                   &ldquo;{p.question}&rdquo;
-//                 </p>
-
-//               </div>
-//             );
-//           })}
-//         </div>
-
-//         {/* --- SEPARATOR --- */}
-//         <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#E5E7EB] to-transparent mt-24" />
-
-
-//       </div>
-//     </section>
-//   );
-// }
-
-
 'use client';
-import { PROGRESSION, STAGES } from '@/components/programs/futurereadyData';
 
-// Helper to assign a compact inline SVG icon for each progression step/stage title
+import { PROGRESSION } from '@/components/programs/futurereadyData';
+
+// Helper to assign the authentic inline SVG icon with hover animation support
 const getStageIcon = (index: number) => {
   switch (index) {
     case 0:
+      // 1. Discover (Compass / Needle rotates)
       return (
-        <svg className="w-10 h-10 text-altiusGold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        <svg
+          className="w-8 h-8 text-altiusGold shrink-0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <polygon
+            className="journey-compass-needle"
+            points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"
+            style={{ transformOrigin: '12px 12px' }}
+          />
         </svg>
       );
     case 1:
+      // 2. Explore (Magnifying Glass / 2 Flips + Bounce)
       return (
-        <svg className="w-8 h-8 text-altiusGold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+        <svg
+          className="w-8 h-8 text-altiusGold shrink-0 overflow-visible"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          style={{ overflow: 'visible' }}
+        >
+          <g className="journey-magnifier-icon" style={{ transformOrigin: '12px 12px' }}>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </g>
         </svg>
       );
     case 2:
+      // 3. Create (Lightbulb / Warm Glow Pulse)
       return (
-        <svg className="w-8 h-8 text-altiusGold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        <svg
+          className="w-8 h-8 text-altiusGold shrink-0 journey-bulb-glow"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          style={{ transformOrigin: '12px 12px' }}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+          />
         </svg>
       );
     case 3:
+      // 4. Develop (Code / Brackets spread + Slash pulse)
       return (
-        <svg className="w-8 h-8 text-altiusGold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        <svg
+          className="w-8 h-8 text-altiusGold shrink-0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            className="journey-code-left"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6 16l-4-4 4-4"
+          />
+          <path
+            className="journey-code-slash"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M10 20l4-16"
+            style={{ transformOrigin: '12px 12px' }}
+          />
+          <path
+            className="journey-code-right"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M18 8l4 4-4 4"
+          />
         </svg>
       );
     case 4:
+      // 5. Experience (Briefcase / Handle lifts + Flap opens)
       return (
-        <svg className="w-8 h-8 text-altiusGold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        <svg
+          className="w-8 h-8 text-altiusGold shrink-0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            className="journey-briefcase-handle"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"
+            style={{ transformOrigin: '12px 6px' }}
+          />
+          <path
+            className="journey-briefcase-body"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
+          <g className="journey-briefcase-lid" style={{ transformOrigin: '12px 7px' }}>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745"
+            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v.01" />
+          </g>
         </svg>
       );
     case 5:
+      // 6. Specialize (Target / Arrow hits bullseye)
       return (
-        <svg className="w-8 h-8 text-altiusGold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <svg
+          className="w-8 h-8 text-altiusGold shrink-0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <g className="journey-target-rings" style={{ transformOrigin: '12px 12px' }}>
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="12" cy="12" r="1" />
+          </g>
+          <g className="journey-target-arrow" style={{ opacity: 0 }}>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 5L12 12M12 12H15.5M12 12V8.5"
+              strokeWidth="1.8"
+            />
+          </g>
         </svg>
       );
     case 6:
+      // 7. Apply (Document / Page processing swap)
       return (
-        <svg className="w-8 h-8 text-altiusGold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <svg
+          className="w-8 h-8 text-altiusGold shrink-0"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <g className="journey-document-next" style={{ opacity: 0 }}>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </g>
+          <g className="journey-document-current">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </g>
         </svg>
       );
     case 7:
+      // 8. Launch (Rocket / Flame launch & return)
       return (
-        <svg className="w-8 h-8 text-altiusGold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15.536 11.464a5 5 0 10-7.072 0l.282.282c.394.394.394 1.033 0 1.427-.394.394-1.033.394-1.427 0l-.２8２-.２8２a7 7 0 1１9.９ ０l-.２8２.２8２c-.３９４.３９４-.３９４ １.０３３ ０ １.４２７.３９４.394 １.０３３.394 １.４２７ ０l.２８２-.２８２zM１２ １２v４m０ ４h.０１" />
+        <svg
+          className="w-8 h-8 text-altiusGold shrink-0 overflow-visible"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <g className="journey-rocket-flame" style={{ opacity: 0 }}>
+            <path
+              strokeLinecap="round"
+              strokeWidth="1.6"
+              stroke="#F59E0B"
+              d="M9.5 15.5l-4 4m2.2-1l-3 3m3.8-3l-2 2"
+            />
+            <circle cx="5" cy="19" r="0.75" fill="#FBBF24" stroke="none" />
+            <circle cx="7.5" cy="17.5" r="0.6" fill="#F59E0B" stroke="none" />
+            <circle cx="3.5" cy="21" r="0.5" fill="#D4AF37" stroke="none" />
+          </g>
+          <g className="journey-rocket-next" style={{ opacity: 0 }}>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.84 2.58m-.2-8.38a6 6 0 01-7.38 5.84v4.8h4.8a6 6 0 012.58-5.84z"
+            />
+          </g>
+          <g className="journey-rocket-current">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.84 2.58m-.2-8.38a6 6 0 01-7.38 5.84v4.8h4.8a6 6 0 012.58-5.84z"
+            />
+          </g>
         </svg>
       );
     default:
-      return (
-        <svg className="w-15 h-15 text-altiusGold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M5 13l4 4L19 7" />
-        </svg>
-      );
+      return null;
   }
 };
 
@@ -245,7 +223,8 @@ export default function ProgramSteps() {
     <section className="py-20 lg:py-32 px-6 bg-[#F8F9FB] border-y border-gray-200 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
-        <div className="text-center max-w-2xl mx-auto space-y-4 mb-20 lg:mb-28">
+        {/* Header Introduction */}
+        <div className="text-center max-w-2xl mx-auto space-y-4 mb-16 lg:mb-28">
           <span className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 bg-clip-text text-transparent font-bold uppercase tracking-[0.2em] text-[11px]">
             FutureReady™ Journey
           </span>
@@ -257,26 +236,22 @@ export default function ProgramSteps() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-6 max-w-6xl mx-auto relative z-10">
+        {/* --- DESKTOP 4-COLUMN HORIZONTAL TIMELINE (lg and above) --- */}
+        <div className="hidden lg:grid lg:grid-cols-4 gap-y-16 gap-x-6 max-w-6xl mx-auto relative z-10">
           {PROGRESSION.map((p, index) => {
-            const stage = STAGES[index];
             const stageNumber = String(index + 1).padStart(2, '0');
             const isNavyNode = index === 0 || index === 7;
             return (
               <div
-                key={p.stage}
+                key={`desktop-${p.stage}`}
                 className="relative flex flex-col items-center text-center group"
               >
+                {/* Horizontal connecting line: connects 0->1, 1->2, 2->3 (row 1) and 4->5, 5->6, 6->7 (row 2) */}
                 {(index !== 3 && index !== 7) && (
-                  <div className="hidden lg:block absolute top-5 left-1/2 w-full h-[2px] bg-[#0E1B3D] -z-10 opacity-80" />
-                )}
-                {(index === 0 || index === 2 || index === 4 || index === 6) && (
-                  <div className="hidden sm:block lg:hidden absolute top-5 left-1/2 w-full h-[2px] bg-[#0E1B3D] -z-10 opacity-80" />
-                )}
-                {index !== 7 && (
-                  <div className="block sm:hidden absolute top-10 left-1/2 -translate-x-1/2 w-[2px] h-[calc(100%+4rem)] bg-[#0E1B3D] -z-10 opacity-80" />
+                  <div className="absolute top-5 left-1/2 w-full h-[2px] bg-[#0E1B3D] -z-10 opacity-80" />
                 )}
 
+                {/* Number node */}
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-[13px] text-white relative z-10 shadow-sm transition-transform group-hover:scale-110
                   ${isNavyNode ? 'bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-900' : 'bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 text-altiusNavy'}
@@ -298,11 +273,68 @@ export default function ProgramSteps() {
                   </h3>
                 </div>
 
+                {/* Gold Divider Line */}
                 <div className="w-10 h-[3px] bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 mb-4 mx-auto transition-all group-hover:w-16" />
 
+                {/* Guiding Question */}
                 <p className="font-serif italic text-[15px] text-[#667085] leading-relaxed px-2">
                   &ldquo;{p.question}&rdquo;
                 </p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* --- MOBILE / TABLET DEDICATED VERTICAL TIMELINE (below lg) --- */}
+        <div className="block lg:hidden max-w-xl mx-auto px-2 sm:px-4">
+          {PROGRESSION.map((p, index) => {
+            const stageNumber = String(index + 1).padStart(2, '0');
+            const isNavyNode = index === 0 || index === 7;
+            const isLast = index === PROGRESSION.length - 1;
+            return (
+              <div
+                key={`mobile-${p.stage}`}
+                className="relative flex items-start gap-4 sm:gap-6 pb-12 sm:pb-14 last:pb-0 group"
+              >
+                {/* Vertical connecting line - runs down through the number column only */}
+                {!isLast && (
+                  <div className="absolute top-10 bottom-0 left-5 -translate-x-1/2 w-[2px] bg-[#0E1B3D] opacity-80" />
+                )}
+
+                {/* Left Column: Number Node */}
+                <div className="relative z-10 shrink-0">
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-[13px] text-white shadow-sm transition-transform group-hover:scale-110
+                    ${isNavyNode ? 'bg-gradient-to-r from-blue-950 via-altiusNavy to-blue-900' : 'bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 text-altiusNavy'}
+                    `}
+                  >
+                    {stageNumber}
+                  </div>
+                </div>
+
+                {/* Right Column: Stage Content */}
+                <div className="flex-1 pt-0.5 space-y-1.5 min-w-0">
+                  {/* Grade Label */}
+                  <p className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 bg-clip-text text-transparent text-[11px] font-bold uppercase tracking-[0.15em]">
+                    {p.grade}
+                  </p>
+
+                  {/* Stage Title + Icon */}
+                  <div className="flex items-center gap-2.5 transition-transform group-hover:-translate-y-0.5">
+                    {getStageIcon(index)}
+                    <h3 className="font-serif text-2xl sm:text-[26px] font-bold text-altiusNavy leading-tight">
+                      {p.stage}
+                    </h3>
+                  </div>
+
+                  {/* Gold Divider Line */}
+                  <div className="w-10 h-[3px] bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 transition-all group-hover:w-16" />
+
+                  {/* Guiding Question */}
+                  <p className="font-serif italic text-[14px] sm:text-[15px] text-[#667085] leading-relaxed max-w-md pt-0.5">
+                    &ldquo;{p.question}&rdquo;
+                  </p>
+                </div>
               </div>
             );
           })}

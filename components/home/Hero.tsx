@@ -127,7 +127,7 @@ const HERO_SLIDES: HeroSlide[] = [
   },
 ];
 
-const AUTOPLAY_INTERVAL = 6000; // 6 seconds per slide
+const AUTOPLAY_INTERVAL = 2000; // 2 seconds per slide
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -142,10 +142,6 @@ export default function Hero() {
 
   const nextSlide = useCallback(() => {
     goToSlide(currentIndex + 1);
-  }, [currentIndex, goToSlide]);
-
-  const prevSlide = useCallback(() => {
-    goToSlide(currentIndex - 1);
   }, [currentIndex, goToSlide]);
 
   useEffect(() => {
@@ -239,34 +235,14 @@ export default function Hero() {
 
           {/* Carousel Navigation */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/15">
-            {/* Previous / Next Controls and Counter */}
+            {/* Slide Counter */}
             <div className="flex items-center gap-3">
-              <button
-                onClick={prevSlide}
-                className="w-8 h-8 rounded-full border border-white/25 bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
-                aria-label="Previous slide"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              
               <div className="text-xs font-mono font-semibold tracking-wider text-gray-300">
                 <span className="text-altiusGold font-bold">
                   {String(currentIndex + 1).padStart(2, '0')}
                 </span>
                 <span className="text-gray-400"> / {String(HERO_SLIDES.length).padStart(2, '0')}</span>
               </div>
-
-              <button
-                onClick={nextSlide}
-                className="w-8 h-8 rounded-full border border-white/25 bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
-                aria-label="Next slide"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
             </div>
 
             {/* Student Proof Badges */}

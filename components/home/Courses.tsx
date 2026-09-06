@@ -106,8 +106,8 @@ export default function SpecialtyPrograms() {
 
       </div>
 
-      <div className="w-full overflow-hidden relative flex py-4 mt-8">
-        <div className="flex gap-6 shrink-0 animate-marquee hover:[animation-play-state:paused]">
+      <div className="w-full overflow-hidden relative flex py-4 mt-8 marquee-container">
+        <div className="flex gap-6 shrink-0 animate-marquee">
           {[...programs, ...programs].map((program, index) => (
             <div
               key={index}
@@ -150,6 +150,10 @@ export default function SpecialtyPrograms() {
           display: flex;
           width: max-content;
           animation: marquee 35s linear infinite;
+        }
+        .animate-marquee:hover,
+        .marquee-container:hover .animate-marquee {
+          animation-play-state: paused !important;
         }
       `}</style>
     </section>
