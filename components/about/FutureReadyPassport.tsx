@@ -30,14 +30,15 @@ const getPillarIcon = (title: string) => {
 export default function FutureReadyPassport() {
   return (
     <div 
-      className="relative w-full mt-16 sm:mt-24 mb-16 py-20 sm:py-28 overflow-hidden bg-[url('/abt.png')] bg-cover bg-center bg-no-repeat"
+      className="relative w-full pt-12 pb-20 sm:pb-28 overflow-hidden bg-[url('/abt.png')] bg-cover bg-center bg-no-repeat"
     >
       {/* --- Dark Overlays for Contrast --- */}
       <div className="absolute inset-0 bg-altiusNavy/40 mix-blend-multiply pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-altiusNavy via-altiusNavy/90 to-altiusNavy pointer-events-none" />
 
       {/* --- Content Container --- */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        
         {/* Header */}
         <div className="text-center mb-16 space-y-3">
           <span className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 bg-clip-text text-transparent font-bold uppercase tracking-[0.2em] text-[11px]">
@@ -48,24 +49,64 @@ export default function FutureReadyPassport() {
           </h3>
         </div>
         
-        {/* Pillars Grid with SVGs */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {PILLARS.map((pillar) => (
-            <div 
-              key={pillar.title} 
-              className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-altiusGold/50 hover:bg-white/10 transition-all duration-300 rounded-[16px] p-6 sm:p-8 flex flex-col gap-4 shadow-xl hover:-translate-y-1 group"
-            >
-              <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-altiusGold/20 transition-colors flex items-center justify-center shrink-0">
-                {getPillarIcon(pillar.title)}
-              </div>
-              <div className="text-white">
-                <p className="font-serif font-bold text-lg mb-2">{pillar.title}</p>
-                <p className="text-gray-300 text-[13px] leading-relaxed">{pillar.desc}</p>
-              </div>
-            </div>
-          ))}
+        {/* Automatic Sliding Marquee Track */}
+        <div className="w-full overflow-hidden relative flex py-4">
+          <div className="flex gap-6 shrink-0 animate-passport-marquee">
+            {[...PILLARS, ...PILLARS].map((pillar, index) => {
+              // Real index calculation to cycle through numbers properly (1 to 7)
+              const pillarNum = (index % PILLARS.length) + 1;
+              return (
+                <div 
+                  key={index} 
+                  className="group relative bg-white/5 backdrop-blur-md border border-white/10 hover:border-altiusGold/60 hover:bg-white/10 transition-all duration-300 rounded-[18px] p-6 sm:p-8 flex flex-col justify-between space-y-6 w-[280px] sm:w-[310px] shrink-0 shadow-xl hover:-translate-y-2 hover:[animation-play-state:paused]"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="w-12 h-12 rounded-full bg-white/10 group-hover:bg-altiusGold/25 transition-colors flex items-center justify-center shrink-0 border border-white/10">
+                        {getPillarIcon(pillar.title)}
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest bg-altiusGold/15 text-altiusGold px-2.5 py-1 rounded-full">
+                        Pillar 0{pillarNum}
+                      </span>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h4 className="font-serif font-bold text-xl text-white group-hover:text-altiusGold transition-colors">
+                        {pillar.title}
+                      </h4>
+                      <p className="text-gray-300 text-[13px] sm:text-[14px] leading-relaxed">
+                        {pillar.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-altiusGold">
+                    <span>Verified Growth</span>
+                    <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
+
       </div>
+
+      <style jsx global>{`
+        @keyframes passportMarquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-passport-marquee {
+          display: flex;
+          width: max-content;
+          animation: passportMarquee 35s linear infinite;
+        }
+        /* Pauses the animation when any card in the track is hovered */
+        .animate-passport-marquee:has(.group:hover) {
+          animation-play-state: paused;
+        }
+      `}</style>
     </div>
   );
 }

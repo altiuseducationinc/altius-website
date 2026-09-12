@@ -188,10 +188,10 @@ import Image from 'next/image';
 import { Compass, Network, Code2, BriefcaseBusiness, ArrowUpRight } from 'lucide-react';
 
 const team = [
-  { name: 'Career Mentors', role: 'Discover → Launch Journey Guides', image: '/student1.jpg', icon: Compass },
-  { name: 'Pathway Specialists', role: 'Engineering, Business, Media & Trades', image: '/student2.jpg', icon: Network },
-  { name: 'Technology Instructors', role: 'Coding, AI, CAD & 3D Printing', image: '/student3.jpg', icon: Code2 },
-  { name: 'Industry & Workplace Guides', role: 'Co-op, Interviews & Career Readiness', image: '/student4.jpg', icon: BriefcaseBusiness },
+  { name: 'Career Mentors', role: 'Discover → Launch Journey Guides', image: '/f1.png', icon: Compass },
+  { name: 'Pathway Specialists', role: 'Engineering, Business, Media & Trades', image: '/f2.png', icon: Network },
+  { name: 'Technology Instructors', role: 'Coding, AI, CAD & 3D Printing', image: '/f3.png', icon: Code2 },
+  { name: 'Industry & Workplace Guides', role: 'Co-op, Interviews & Career Readiness', image: '/f4.png', icon: BriefcaseBusiness },
 ];
 
 export default function LeadershipTeam() {

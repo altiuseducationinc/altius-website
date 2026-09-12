@@ -6,6 +6,7 @@ import LeadershipTeam from '@/components/about/LeadershipTeam';
 import FutureReadyPassport from '@/components/about/FutureReadyPassport';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import AnnouncementBar from '@/components/AnnouncementBar';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -17,12 +18,15 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen flex flex-col justify-between bg-altiusLight text-altiusNavy">
       <div>
+      <AnnouncementBar /> 
         <Navbar />
         <AboutHero />
-        <ProgramSteps />
-        <FutureReadyPassport />
+         <LeadershipTeam />
+        
         <VisionSection />
-        <LeadershipTeam />
+      
+        <FutureReadyPassport />
+         <ProgramSteps />
       </div>
       <Footer />
     </main>

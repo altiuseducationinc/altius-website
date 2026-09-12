@@ -158,14 +158,14 @@ export default function ProgramsContent({ initialTab }: { initialTab?: string })
   return (
     <div>
       <ProgramsHero />
-      <section className="py-16 px-6 bg-altiusLight text-altiusNavy">
+      <section className="py-16 px-6 bg-white text-altiusNavy">
         <div className="max-w-7xl mx-auto">
           <FutureReadyContent />
         </div>
       </section>
       <section
         id="specialty-programs"
-        className="py-16 px-6 bg-altiusLight text-altiusNavy border-t border-gray-200/70 scroll-mt-28"
+        className="py-16 px-6 bg-white text-altiusNavy border-t border-gray-200/70 scroll-mt-28"
       >
         <div className="max-w-7xl mx-auto space-y-10">
 
@@ -225,9 +225,6 @@ export default function ProgramsContent({ initialTab }: { initialTab?: string })
 
         </div>
       </section>
-
-
-
     </div>
   );
 }

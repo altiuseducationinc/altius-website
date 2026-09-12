@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProgramsContent from '@/components/programs/ProgramsContent';
+import AnnouncementBar from '@/components/AnnouncementBar';
 
 export const metadata: Metadata = {
   title: 'Programs & Pathways',
@@ -14,6 +15,8 @@ export default function ProgramsPage() {
   return (
     <main className="min-h-screen flex flex-col justify-between bg-altiusLight text-altiusNavy">
       <div>
+              <AnnouncementBar /> 
+        
         <Navbar />
         <Suspense fallback={<div className="py-20 text-center">Loading...</div>}>
           <ProgramsContent />

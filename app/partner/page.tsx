@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PartnerHero from '@/components/partner/PartnerHero';
-import PartnerFormEmbed from '@/components/partner/PartnerFormEmbed';
+import PartnerFormRedirect from '@/components/partner/PartnerFormEmbed'; // Or PartnerFormEmbed based on your file naming
+import AnnouncementBar from '@/components/AnnouncementBar';
 
 export const metadata: Metadata = {
   title: 'Partner With Altius',
@@ -12,16 +13,18 @@ export const metadata: Metadata = {
 
 export default function PartnerPage() {
   return (
-    <main className="min-h-screen flex flex-col justify-between bg-altiusLight text-altiusNavy">
+    <main className="min-h-screen flex flex-col justify-between bg-white text-altiusNavy">
       <div>
+        <AnnouncementBar />
         <Navbar />
         <PartnerHero />
 
-        <section className="relative px-6 -mt-20 sm:-mt-24">
-          <div className="max-w-6xl mx-auto">
-            <PartnerFormEmbed />
+        {/* Normal container flow without overlap */}
+        <section className="relative px-6 py-12">
+          <div className="max-w-4xl mx-auto">
+            <PartnerFormRedirect />
           </div>
-        </section>
+        </section>      
       </div>
       <Footer />
     </main>

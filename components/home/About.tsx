@@ -54,13 +54,17 @@ export default function About() {
           </div>
 
           <div className="lg:col-span-6 relative">
-            <div className="relative h-[380px] sm:h-[450px] w-full rounded-[10px] overflow-hidden shadow-2xl">
-              <Image
-                src="/bg.jpg"
-                alt="Altius Campus and Students"
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-[380px] sm:h-[550px] w-full rounded-[10px] overflow-hidden shadow-2xl">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/about.mp4" type="video/mp4" />
+                <img src="/about.png" alt="Altius Learning Environment" className="w-full h-full object-cover" />
+              </video>
             </div>
             {/* Floating box with dark blue gradient background */}
             <div className="absolute -bottom-6 -left-6 hidden sm:block bg-gradient-to-br from-blue-950 via-altiusNavy to-blue-900 text-white p-6 rounded-[10px] shadow-xl max-w-xs border border-white/15">

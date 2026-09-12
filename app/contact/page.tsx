@@ -5,6 +5,7 @@ import ContactHero from '@/components/contact/ContactHero';
 import ContactInfoCard from '@/components/contact/ContactInfoCard';
 import ContactForm from '@/components/contact/ContactForm';
 import ContactMap from '@/components/contact/ContactMap';
+import AnnouncementBar from '@/components/AnnouncementBar';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -14,8 +15,9 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen flex flex-col justify-between bg-altiusLight text-altiusNavy">
+    <main className="min-h-screen flex flex-col justify-between bg-white text-altiusNavy">
       <div>
+        <AnnouncementBar />
         <Navbar />
         <ContactHero />
 

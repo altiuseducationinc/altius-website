@@ -10,12 +10,16 @@ import TestimonialsFAQ from "@/components/home/Testimonials";
 import FAQ from "@/components/home/FAQ";
 import HomeContactBanner from "@/components/home/HomeContactBanner";
 import BrandBanner from "@/components/BrandBanner";
+import AnnouncementBar from "@/components/AnnouncementBar"; // Import the announcement bar
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col justify-between">
       <div>
+        {/* Placed at the very top, visible above the Navbar */}
+        <AnnouncementBar />
         <Navbar />
+        
         <Hero />        
         <Courses />
         <Stats />

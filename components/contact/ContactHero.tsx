@@ -7,7 +7,7 @@ export default function ContactHero() {
     <section className="relative w-full">
       <div className="relative h-[300px] sm:h-[380px] w-full bg-altiusNavy">
         <Image
-          src="/bg1.png"
+          src="/ContactHero.png"
           alt="Contact Altius Education"
           fill
           priority

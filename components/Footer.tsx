@@ -435,7 +435,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-8 border-b border-white/15 gap-6">
  
           {/* Logo container */}
-          <div className="relative w-45 h-20">
+          <div className="relative w-60 h-30">
             <Image
               src="/logo.png"
               alt="Altius Logo"

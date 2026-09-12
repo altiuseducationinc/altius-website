@@ -190,22 +190,22 @@ const stats = [
 
 export default function VisionSection() {
   return (
-    <section className="py-24 px-6 bg-[#F8F9FB] text-[#0E1B3D] overflow-hidden">
+    <section className="pt-24 pb-16 px-6 bg-altiusNavy text-white overflow-hidden">
       <div className="max-w-7xl mx-auto lg:pl-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
           <div className="lg:col-span-4 order-2 lg:order-1 flex flex-col justify-center">
-            <span className="bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 bg-clip-text text-transparent text-[11px] font-bold uppercase tracking-[0.15em] mb-4 block">
+            <span className="bg-gradient-to-r from-amber-400 via-altiusGold to-yellow-300 bg-clip-text text-transparent text-[11px] font-bold uppercase tracking-[0.15em] mb-4 block">
               Mission & Vision
             </span>
 
-            <h2 className="font-serif text-3xl lg:text-[40px] font-bold text-altiusNavy leading-snug mb-6 tracking-tight">
+            <h2 className="font-serif text-3xl lg:text-[40px] font-bold text-white leading-snug mb-6 tracking-tight">
               From Career Discovery in Grade 5 to Career Readiness in Grade 12
             </h2>
 
-            <div className="w-12 h-[3px] bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 mb-6" />
+            <div className="w-12 h-[3px] bg-gradient-to-r from-amber-400 via-altiusGold to-yellow-300 mb-6" />
 
-            <div className="space-y-5 text-[#667085] text-[15px] leading-relaxed font-sans">
+            <div className="space-y-5 text-gray-300 text-[15px] leading-relaxed font-sans">
               <p>
                 Our mission is to give every student a structured, escalating path through careers,
                 leadership, technology, business, and life skills — not just a series of classes.
@@ -217,13 +217,13 @@ export default function VisionSection() {
               </p>
             </div>
 
-            <div className="font-serif italic bg-gradient-to-r from-amber-500 via-altiusGold to-yellow-400 bg-clip-text text-transparent text-xl font-bold mt-10">
+            <div className="font-serif italic bg-gradient-to-r from-amber-400 via-altiusGold to-yellow-300 bg-clip-text text-transparent text-xl font-bold mt-10">
               — Not another tutoring program. <br className="hidden lg:block" /> An 8-year system.
             </div>
           </div>
 
           <div className="lg:col-span-5 order-1 lg:order-2 flex justify-center w-full">
-            <div className="relative w-full max-w-[400px] aspect-[9/16] rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(14,27,61,0.12)] border border-[#0E1B3D]/5 bg-gray-100">
+            <div className="relative w-full max-w-[400px] aspect-[9/16] rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10 bg-blue-950">
               <video
                 autoPlay
                 loop
@@ -239,21 +239,21 @@ export default function VisionSection() {
 
           <div className="lg:col-span-3 order-3 lg:order-3 flex justify-center lg:justify-end mt-4 lg:mt-0">
             <div className="relative flex flex-col space-y-10 w-full max-w-[280px]">
-              <div className="absolute left-[23px] top-[24px] bottom-[24px] w-[2px] bg-[#E5E7EB] -z-10" />
+              <div className="absolute left-[23px] top-[24px] bottom-[24px] w-[2px] bg-white/10 -z-10" />
 
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                   <div key={index} className="flex items-center gap-5 relative z-10 group">
-                    <div className="w-[48px] h-[48px] rounded-full border border-[#E5E7EB] bg-white flex items-center justify-center text-altiusGold shrink-0 shadow-sm transition-transform group-hover:scale-110 group-hover:border-altiusGold duration-300">
+                    <div className="w-[48px] h-[48px] rounded-full border border-white/10 bg-blue-950/80 flex items-center justify-center text-altiusGold shrink-0 shadow-sm transition-transform group-hover:scale-110 group-hover:border-altiusGold duration-300">
                       <Icon className="w-5 h-5" strokeWidth={1.5} />
                     </div>
 
                     <div className="flex flex-col">
-                      <h3 className="font-serif text-3xl font-bold text-altiusNavy leading-none mb-1">
+                      <h3 className="font-serif text-3xl font-bold text-white leading-none mb-1">
                         {stat.value}
                       </h3>
-                      <p className="text-[#667085] text-[10px] uppercase tracking-[0.15em] font-bold leading-tight">
+                      <p className="text-gray-400 text-[10px] uppercase tracking-[0.15em] font-bold leading-tight">
                         {stat.label.split(' ').map((word, i) => (
                           <span key={i} className="block">{word}</span>
                         ))}

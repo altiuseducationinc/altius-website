@@ -3,6 +3,8 @@ import { Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CurriculumContent from '@/components/curriculum/CurriculumContent';
+import AnnouncementBar from '@/components/AnnouncementBar';
+import CurriculumHero from '@/components/curriculum/CurriculumHero';
 
 export const metadata: Metadata = {
   title: 'Ontario Curriculum & Resources | Altius Education',
@@ -25,6 +27,7 @@ export default function CurriculumPage() {
   return (
     <main className="min-h-screen flex flex-col justify-between bg-slate-50 text-altiusNavy">
       <div>
+        <AnnouncementBar />
         <Navbar />
         <Suspense fallback={<div className="py-24 text-center text-sm font-bold text-gray-500">Loading Ontario Curriculum...</div>}>
           <CurriculumContent />
