@@ -141,7 +141,6 @@ export default function ProgramsContent({ initialTab }: { initialTab?: string })
   useEffect(() => {
     if (normalizedKey && TAB_MAP[normalizedKey]) {
       const resolvedTab = TAB_MAP[normalizedKey];
-      setActiveTab(resolvedTab);
 
       // Scroll to the specialty programs section smoothly
       const targetElement = document.getElementById('specialty-programs');
@@ -150,6 +149,10 @@ export default function ProgramsContent({ initialTab }: { initialTab?: string })
           targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 150);
       }
+
+      // Sync tab with URL changes (already applied on initial mount via lazy state)
+      const frame = requestAnimationFrame(() => setActiveTab(resolvedTab));
+      return () => cancelAnimationFrame(frame);
     }
   }, [normalizedKey]);
 

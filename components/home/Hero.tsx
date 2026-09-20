@@ -19,11 +19,11 @@ interface HeroSlide {
 const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'futureready',
-    badge: 'Grades 5–12 • Career • Leadership • Innovation • Life Skills',
-    titleLine1: 'One System. Eight Years.',
-    titleLine2: 'A Career-Ready Graduate.',
+    badge: 'Brampton, Ontario • Tutoring • Career • Leadership • Innovation • Life Skills',
+    titleLine1: 'Tutoring Classes & Career Programs',
+    titleLine2: 'In Brampton, Ontario.',
     description:
-      'Altius FutureReady™ is not another tutoring program — it is a structured 8-year journey that takes a child from career discovery in Grade 5 to complete career readiness in Grade 12, building an evidence portfolio along the way.',
+      'Altius Education offers tutoring classes in math, science, and English plus an 8-year Grades 5–12 career-readiness program — taking your child from career discovery in Grade 5 to complete career readiness in Grade 12, with an evidence portfolio along the way.',
     primaryBtnText: 'Explore the 8-Year Journey',
     primaryBtnLink: '/#journey',
     secondaryBtnText: 'Enrol for 2026–27',
