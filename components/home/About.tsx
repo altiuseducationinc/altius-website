@@ -56,7 +56,7 @@ export default function About() {
           <div className="lg:col-span-6 relative">
             <div className="relative h-[380px] sm:h-[450px] w-full rounded-[10px] overflow-hidden shadow-2xl">
               <Image
-                src="/bg.jpg"
+                src="/bg.webp"
                 alt="Altius Campus and Students"
                 fill
                 className="object-cover"

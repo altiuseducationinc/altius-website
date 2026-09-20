@@ -161,7 +161,7 @@ export default function CurriculumContent() {
       <section className="relative w-full">
         <div className="relative min-h-[340px] sm:min-h-[380px] w-full bg-altiusNavy flex items-end">
           <Image
-            src="/bg1.png"
+            src="/bg1.webp"
             alt="Altius Education Curriculum & Resources"
             fill
             priority

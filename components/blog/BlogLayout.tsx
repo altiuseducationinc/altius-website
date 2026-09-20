@@ -13,7 +13,7 @@ const blogCategories = [
         title: "The 8-Year Altius FutureReady™ Journey: From Career Discovery to Career Readiness",
         category: "FutureReady Journey",
         date: "June 10, 2026",
-        image: "/program1.jpg",
+        image: "/program1.webp",
         excerpt:
           "How a structured Grades 5–12 system — Discover to Launch — builds a career-ready graduate with real evidence, not just a certificate.",
       },
@@ -22,7 +22,7 @@ const blogCategories = [
         title: "Why Grade 5 Is Not Too Early to Start Thinking About a Career",
         category: "Career Readiness",
         date: "May 28, 2026",
-        image: "/program2.jpg",
+        image: "/program2.webp",
         excerpt:
           "Career discovery in childhood builds confidence, direction, and purpose. Here is how the journey begins in the youngest grades.",
       },
@@ -31,7 +31,7 @@ const blogCategories = [
         title: "Choosing a Grade 10 Pathway: Engineering, Business, Media, Education, or Trades",
         category: "Career Pathways",
         date: "May 15, 2026",
-        image: "/program3.jpg",
+        image: "/program3.webp",
         excerpt:
           "A practical guide to the five FutureReady pathways and how students decide which specialization fits them best.",
       },
@@ -40,7 +40,7 @@ const blogCategories = [
         title: "The FutureReady Passport: Building Evidence, Not Just Grades",
         category: "The Passport",
         date: "May 02, 2026",
-        image: "/program4.jpg",
+        image: "/program4.webp",
         excerpt:
           "Seven competency pillars, one portfolio. How students collect proof of communication, leadership, technology, business, and more each year.",
       },
@@ -49,7 +49,7 @@ const blogCategories = [
         title: "From CAD to Capstone: How 3D Printing and CNC Prepare Students for Real Careers",
         category: "Technology & Skills",
         date: "April 20, 2026",
-        image: "/program5.jpg",
+        image: "/program5.webp",
         excerpt:
           "Hands-on technology is the fastest way to teach design thinking, problem solving, and manufacturing readiness.",
       },
@@ -63,7 +63,7 @@ const blogCategories = [
         title: "The 8-Year Altius FutureReady™ Journey: From Career Discovery to Career Readiness",
         category: "FutureReady Journey",
         date: "June 10, 2026",
-        image: "/program1.jpg",
+        image: "/program1.webp",
         excerpt:
           "How a structured Grades 5–12 system — Discover to Launch — builds a career-ready graduate with real evidence, not just a certificate.",
       },
@@ -72,7 +72,7 @@ const blogCategories = [
         title: "What Your Child Learns in Each Grade Stage: Discover, Explore, Create, Develop",
         category: "FutureReady Journey",
         date: "April 12, 2026",
-        image: "/program2.jpg",
+        image: "/program2.webp",
         excerpt:
           "A walkthrough of the first four stages and the signature projects — from 'My Future Career' to 'Build a Business' — that build momentum.",
       },
@@ -86,7 +86,7 @@ const blogCategories = [
         title: "Choosing a Grade 10 Pathway: Engineering, Business, Media, Education, or Trades",
         category: "Career Pathways",
         date: "May 15, 2026",
-        image: "/program3.jpg",
+        image: "/program3.webp",
         excerpt:
           "A practical guide to the five FutureReady pathways and how students decide which specialization fits them best.",
       },
@@ -95,7 +95,7 @@ const blogCategories = [
         title: "Skilled Trades Are a Smart Career Path: Welding, Manufacturing, and CNC",
         category: "Career Pathways",
         date: "March 30, 2026",
-        image: "/program4.jpg",
+        image: "/program4.webp",
         excerpt:
           "Foundational trade skills offer real career opportunities — and the earlier students explore them, the better.",
       },
@@ -109,7 +109,7 @@ const blogCategories = [
         title: "From CAD to Capstone: How 3D Printing and CNC Prepare Students for Real Careers",
         category: "Technology & Skills",
         date: "April 20, 2026",
-        image: "/program5.jpg",
+        image: "/program5.webp",
         excerpt:
           "Hands-on technology is the fastest way to teach design thinking, problem solving, and manufacturing readiness.",
       },
@@ -118,7 +118,7 @@ const blogCategories = [
         title: "Coding, AI, and Digital Media: Essential Skills for the Next Decade",
         category: "Technology & Skills",
         date: "March 15, 2026",
-        image: "/program2.jpg",
+        image: "/program2.webp",
         excerpt:
           "Why every student — regardless of pathway — should build confidence with programming, responsible AI use, and digital creativity.",
       },
@@ -132,7 +132,7 @@ const blogCategories = [
         title: "Teaching Financial Literacy: From Allowance Budgeting to Investing Basics",
         category: "Leadership & Life Skills",
         date: "February 28, 2026",
-        image: "/program1.jpg",
+        image: "/program1.webp",
         excerpt:
           "Financial independence is a skill, not a gift. How the journey builds money confidence year after year.",
       },
@@ -141,7 +141,7 @@ const blogCategories = [
         title: "Public Speaking, Teamwork, and Resilience: The Skills Tests Can't Measure",
         category: "Leadership & Life Skills",
         date: "February 12, 2026",
-        image: "/program3.jpg",
+        image: "/program3.webp",
         excerpt:
           "Communication and leadership are the pillars that turn subject knowledge into career success.",
       },
@@ -155,7 +155,7 @@ const blogCategories = [
         title: "Preparing for TCF & TEF: Success Strategies for French Exams",
         category: "Specialty Programs",
         date: "January 30, 2026",
-        image: "/program4.jpg",
+        image: "/program4.webp",
         excerpt:
           "Structured practice and test familiarity are the keys to confidence in speaking, listening, reading, and writing.",
       },
@@ -164,7 +164,7 @@ const blogCategories = [
         title: "The Cognitive Benefits of Music Education for Children and Youth",
         category: "Specialty Programs",
         date: "January 15, 2026",
-        image: "/program5.jpg",
+        image: "/program5.webp",
         excerpt:
           "Music education builds discipline, enhances memory, and fosters creative self-expression in a supportive environment.",
       },
@@ -178,7 +178,7 @@ const blogCategories = [
         title: "Altius Announces 2026–27 FutureReady™ Admissions — Reserve Your Grade Stage",
         category: "News",
         date: "June 12, 2026",
-        image: "/program3.jpg",
+        image: "/program3.webp",
         excerpt:
           "New batches are open across all eight grade stages, plus expanded specialty programs in tutoring, languages, music, CNC, and skilled trades.",
       },
@@ -232,7 +232,7 @@ export default function BlogLayout() {
             <div className="relative rounded-xl overflow-hidden shadow-lg h-[340px] flex flex-col justify-end p-6 text-white">
               <div className="absolute inset-0 z-0">
                 <Image
-                  src="/student1.jpg"
+                  src="/student1.webp"
                   alt="Altius FutureReady Programs"
                   fill
                   className="object-cover"

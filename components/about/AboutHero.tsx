@@ -82,7 +82,7 @@ export default function AboutHero() {
     <section className="relative w-full">
       <div className="relative h-[300px] sm:h-[380px] w-full bg-altiusNavy">
         <Image
-          src="/bg1.png"
+          src="/bg1.webp"
           alt="Altius Education Campus"
           fill
           priority

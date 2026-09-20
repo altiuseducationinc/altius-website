@@ -164,7 +164,7 @@ export default function TestimonialsFAQ() {
   return (
     <section
       className="relative py-28 px-6 bg-altiusNavy text-white overflow-hidden bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: "url('/bg1.png')" }}
+      style={{ backgroundImage: "url('/bg1.webp')" }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
