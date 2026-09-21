@@ -5,7 +5,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const playfair = Playfair_Display({
-  subsets: ["latin"],
+  subsets: ["latin"], 
   variable: "--font-playfair",
 });
 
