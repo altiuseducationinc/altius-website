@@ -7,7 +7,7 @@ export default function ProgramsHero() {
     <section className="relative w-full">
       <div className="relative h-[300px] sm:h-[380px] w-full bg-altiusNavy">
         <Image
-          src="/ProgramHero.png"
+          src="/ProgramHero.webp"
           alt="Altius FutureReady Programs"
           fill
           priority

@@ -1,0 +1,49 @@
+# Global Security & Caching defaults
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Cache static next.js assets forever (1 year immutable)
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache media assets (WebP, PNG, JPG, SVG, MP4, WebM, ICO, Fonts) for 1 year immutable
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.mp4
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webm
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=86400
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# Subdirectory media files (e.g. /logo/*)
+/logo/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML Pages: immediate revalidation on deploy
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate

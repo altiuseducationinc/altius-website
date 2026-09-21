@@ -8,7 +8,7 @@ export default function CurriculumHero() {
       {/* Base container matching AboutHero dimensions and styling */}
       <div className="relative h-[320px] sm:h-[380px] w-full bg-altiusNavy overflow-hidden">
         <Image
-          src="/CurriculumHero.png"
+          src="/CurriculumHero.webp"
           alt="Altius Education Curriculum & Resources"
           fill
           priority

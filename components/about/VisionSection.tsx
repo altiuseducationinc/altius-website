@@ -229,10 +229,12 @@ export default function VisionSection() {
                 loop
                 muted
                 playsInline
+                preload="metadata"
+                poster="/abt1-poster.webp"
                 className="absolute inset-0 w-full h-full object-cover"
               >
                 <source src="/abt1.mp4" type="video/mp4" />
-                <img src="/program1.jpg" alt="Altius Learning Environment" className="w-full h-full object-cover" />
+                <img src="/abt1-poster.webp" alt="Altius Learning Environment" className="w-full h-full object-cover" />
               </video>
             </div>
           </div>

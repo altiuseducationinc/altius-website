@@ -196,7 +196,7 @@ export default function Navbar() {
           className="relative w-48 sm:w-56 md:w-64 h-12 sm:h-14 md:h-15 flex items-center shrink-0 transition-transform duration-300 hover:scale-[1.02]"
         >
           <Image 
-            src="/logo-tight.png" 
+            src="/logo-tight.webp" 
             alt="Altius Logo" 
             fill 
             priority

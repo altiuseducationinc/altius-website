@@ -7,7 +7,7 @@ export default function PartnerHero() {
     <section className="relative w-full">
       <div className="relative h-[300px] sm:h-[380px] w-full bg-altiusNavy">
         <Image
-          src="/PartnersHero.png"
+          src="/PartnersHero.webp"
           alt="Partner with Altius Education"
           fill
           priority

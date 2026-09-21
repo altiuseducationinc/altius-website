@@ -437,7 +437,7 @@ export default function Footer() {
           {/* Logo container */}
           <div className="relative w-60 h-30">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Altius Logo"
               fill
               className="object-contain"

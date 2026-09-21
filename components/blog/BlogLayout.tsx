@@ -363,7 +363,7 @@ export default function BlogLayout() {
             <div className="relative rounded-[8px] overflow-hidden shadow-md h-[340px] flex flex-col justify-end p-6 text-white order-1 lg:order-2">
               <div className="absolute inset-0 z-0">
                 <Image
-                  src="/f1.png"
+                  src="/f1.webp"
                   alt="Altius FutureReady Programs"
                   fill
                   className="object-cover"

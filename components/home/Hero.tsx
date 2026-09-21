@@ -483,7 +483,7 @@ export default function Hero() {
       {/* Background Image with optimized overlays */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <Image
-          src="/hero.png"
+          src="/hero.webp"
           alt="Altius FutureReady campus background"
           fill
           priority
@@ -559,16 +559,16 @@ export default function Hero() {
             <div className="flex items-center gap-3.5">
               <div className="flex -space-x-2.5 overflow-hidden">
                 <div className="relative inline-block h-8 w-8 rounded-full ring-2 ring-altiusNavy overflow-hidden bg-gray-200">
-                  <Image src="/student1.jpg" alt="Altius student 1" fill className="object-cover" />
+                  <Image src="/student1.webp" alt="Altius student 1" fill className="object-cover" />
                 </div>
                 <div className="relative inline-block h-8 w-8 rounded-full ring-2 ring-altiusNavy overflow-hidden bg-gray-200">
-                  <Image src="/student2.jpg" alt="Altius student 2" fill className="object-cover" />
+                  <Image src="/student2.webp" alt="Altius student 2" fill className="object-cover" />
                 </div>
                 <div className="relative inline-block h-8 w-8 rounded-full ring-2 ring-altiusNavy overflow-hidden bg-gray-200">
-                  <Image src="/student3.jpg" alt="Altius student 3" fill className="object-cover" />
+                  <Image src="/student3.webp" alt="Altius student 3" fill className="object-cover" />
                 </div>
                 <div className="relative inline-block h-8 w-8 rounded-full ring-2 ring-altiusNavy overflow-hidden bg-gray-200">
-                  <Image src="/student4.jpg" alt="Altius student 4" fill className="object-cover" />
+                  <Image src="/student4.webp" alt="Altius student 4" fill className="object-cover" />
                 </div>
               </div>
               <div>

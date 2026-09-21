@@ -9,7 +9,7 @@ export default function AboutHero() {
       {/* Base container */}
       <div className="relative h-[320px] sm:h-[380px] w-full bg-altiusNavy overflow-hidden">
         <Image
-          src="/AboutHero.png"
+          src="/AboutHero.webp"
           alt="Altius Education Campus"
           fill
           priority

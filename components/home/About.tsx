@@ -60,10 +60,12 @@ export default function About() {
                 loop
                 muted
                 playsInline
+                preload="metadata"
+                poster="/about-poster.webp"
                 className="absolute inset-0 w-full h-full object-cover"
               >
                 <source src="/about.mp4" type="video/mp4" />
-                <img src="/about.png" alt="Altius Learning Environment" className="w-full h-full object-cover" />
+                <img src="/about-poster.webp" alt="Altius Learning Environment" className="w-full h-full object-cover" />
               </video>
             </div>
             {/* Floating box with dark blue gradient background */}
