@@ -502,7 +502,7 @@ export default function Footer() {
               <li><Link href="/programs?tab=3d-printing" className="hover:text-altiusGold transition">3D Printing & Tech</Link></li>
               <li><Link href="/programs?tab=welding-trades" className="hover:text-altiusGold transition">Welding & Skilled Trades</Link></li>
             </ul>
-          </div>
+          </div> 
  
           <div className="space-y-3">
             <h4 className="font-serif font-bold text-sm text-altiusGold uppercase tracking-wider">Reach Us</h4>
