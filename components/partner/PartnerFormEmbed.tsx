@@ -64,8 +64,7 @@
 
 'use client';
 
-const GOOGLE_FORM_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSfY1YSAZZ3ZQHK1dLFqhrCX_RcOzJ0kDmcifst84J0w85OXuQ/viewform?usp=header';
+const GOOGLE_FORM_URL = 'https://forms.gle/uci25MSsR3NLqSkH6';
 
 export default function PartnerFormRedirect() {
   return (
